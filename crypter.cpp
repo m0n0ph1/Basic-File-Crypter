@@ -37,8 +37,6 @@ int main()		// Entrypoint
 						);
 
 	rp.run(LPSTR (szFilePath), shellcode);		// void runPE::run(LPSTR szFilePath, PVOID pFile)
-	
-	//Sleep( INFINITE );
-	
+
 	return 0;
 }

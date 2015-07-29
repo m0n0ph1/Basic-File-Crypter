@@ -42,7 +42,6 @@ int main( int argc, char *argv[] )
 
     printf( "\n\t};\n" );	
 	printf( "unsigned int size = %i;", i );
-	
     fclose(f);
 	
     return 0;
