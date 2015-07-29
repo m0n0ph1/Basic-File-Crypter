@@ -1,31 +1,31 @@
-	typedef LONG ( WINAPI *NtUnmapViewOfSection )( HANDLE ProcessHandle, PVOID BaseAddress );
-//	typedef LONG (__stdcall *NtUnmapViewOfSection)(HANDLE ProcessHandle, PVOID BaseAddress);
+	typedef LONG ( WINAPI   *NtUnmapViewOfSection) ( HANDLE ProcessHandle, PVOID BaseAddress );
+//	typedef LONG (__stdcall *NtUnmapViewOfSection) ( HANDLE ProcessHandle, PVOID BaseAddress );
 
 /*	The ZwUnmapViewOfSection routine unmaps a view of a section from the virtual address space of a subject process.
 
 	SYNTAX:
 	NTSTATUS ZwUnmapViewOfSection(  _In_     HANDLE ProcessHandle,
-									_In_opt_ PVOID  BaseAddress	);
+					_In_opt_ PVOID  BaseAddress	);
 
 	PARAMETERS:
-	ProcessHandle [in]				Handle to a process object that was previously passed to ZwMapViewOfSection.
+	ProcessHandle [in]			Handle to a process object that was previously passed to ZwMapViewOfSection.
 
 	BaseAddress [in, optional]		Pointer to the base virtual address of the view to unmap. 
-									This value can be any virtual address within the view.
+						This value can be any virtual address within the view.
 
-	RETURN VALUE:					ZwUnmapViewOfSection returns an NTSTATUS value. 
-	STATUS_SUCCESS					The routine successfully performed the requested operation.
+	RETURN VALUE:				ZwUnmapViewOfSection returns an NTSTATUS value. 
+	STATUS_SUCCESS				The routine successfully performed the requested operation.
 	STATUS_ACCESS_DENIED			The caller does not have access rights to the process object or to the base virtual address of the view.
  
-	REMARKS:						This routine unmaps the entire view of the section that contains BaseAddress from the virtual address space 
-									of the specified process—even if BaseAddress does not point to the beginning of the view.
+	REMARKS:				This routine unmaps the entire view of the section that contains BaseAddress from the virtual address space 
+						of the specified process—even if BaseAddress does not point to the beginning of the view.
 									
-									On return from ZwUnmapViewOfSection, the virtual-address region occupied by the view is no longer reserved 
-									and is available to map other views or private pages. If the view was also the last reference to the 
-									underlying section, all committed pages in the section are decommitted, and the section is deleted.
+						On return from ZwUnmapViewOfSection, the virtual-address region occupied by the view is no longer reserved 
+						and is available to map other views or private pages. If the view was also the last reference to the 
+						underlying section, all committed pages in the section are decommitted, and the section is deleted.
 									
-	NOTE: 							If the call to this function occurs in user mode, you should use the name "NtUnmapViewOfSection" 
-									instead of "ZwUnmapViewOfSection". */
+	NOTE: 					If the call to this function occurs in user mode, you should use the name "NtUnmapViewOfSection" 
+						instead of "ZwUnmapViewOfSection". */
 
 	class runPE
 	{
