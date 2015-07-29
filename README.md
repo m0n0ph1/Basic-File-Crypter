@@ -13,5 +13,5 @@ Crypter.cpp contains the shellcode.h, which it will execute from memory through 
 #OriginalVirus.c
 Is just a simple Hello-World C-SourceFile, which is used instead of a virus to prevent harm to computers, if you want to test this on a real trojan, you can edit the batchfile to your needs, it should be pretty straightforward.
 
-#Batch file: 
+#MinGW Builder.bat: 
 The batch file will compile, all the projects using the [MinGW-compiler](http://www.mingw.org/) for windows
