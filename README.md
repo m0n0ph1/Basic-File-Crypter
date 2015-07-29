@@ -1,4 +1,4 @@
-#Basic 'Crypter' in C/C++
+#Process Hollowing techniques as used in many file Crypters (C/C++)
 This project takes the Process Hollowing to the next level in an attempt to create something more like a 'crypter' (without the actual encryption or encoding, which will be added later in another project) 
 Initially, the aim here is more about understanding the methods used, rather then to create actual encoders/encrypters, but over time this will happen also.
 
