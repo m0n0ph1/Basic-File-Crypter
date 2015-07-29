@@ -17,4 +17,4 @@ Is just a simple Hello-World C-SourceFile, which is used instead of a virus to p
 The batch file will compile, all the projects using the [MinGW-compiler](http://www.mingw.org/) for windows
 
 #Note
-This repository contains no actual malicious code of any kind, the example file CryptedVirus.exe in the executables folder however, is flagged by virustotal as 17/55 as you can see [here](https://www.virustotal.com/en-gb/file/88d762cc978932e939bb5936956eb3cfb8826b2611705dbb02fa437b4e29193a/analysis/1438197026/) but it only display a messagebox as you can see in the sourcecode
+This repository contains no actual malicious code of any kind, the example file CryptedVirus.exe in the executables folder however, is has a [Detection ratio of 24 / 55 on virustotal] (https://www.virustotal.com/en-gb/file/88d762cc978932e939bb5936956eb3cfb8826b2611705dbb02fa437b4e29193a/analysis/1438197026/) but it only display a messagebox as you can see in the sourcecode
