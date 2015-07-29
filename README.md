@@ -1,44 +1,17 @@
-#Basic Crypter source code
+#Basic 'Crypter' in C/C++
+This project takes the Process Hollowing to the next level in an attempt to create something more like a 'crypter' (without the actual encryption or encoding, which will be added later in another project) Initially, the aim here is more about understanding the methods used, rather then to create actual encoders/encrypters, but over time this will happen also.
 
-Info: This is just a simple noob-friendly source code of crypter to get you started with making your own crypters. 
-Please note that this is just a "skeleton" of a crytpter, having only the bare-minimum that a crypter needs in order to be functional. Anything on top of that, including the encryption, you have to add. 
-Also, keep in mind that you are building the crypter file (that you can run), not a builder that generetes crypted files. 
+#ShellcodeGenerator.c
+ShellcodeGenerator.c takes an executable as an input argument, and converts it into ShellCode (or ByteCode/Hexadecimal, whatever you prefer) A new .h header-file will be created called ShellCode.h, which contains an array with the shellcode of the executable, and the calculated size of that.
 
-Crypting method: 
-This crypter stores the (unencrypted) bytes of an executable in itself, 
-and runs in memory by a method called runPE. It does not drop anything on the HD. 
+#runPE.h
+runPE.h contains a class called runPE which has a void function called run, that takes two arguments, this will convert the shellcode.h file to an executable state again, and runs it in the context of the original process (crypter.cpp)
 
-Specs: 
-Coded in C++, compiled with MinGW compiler, Not FUD
+#crypter.cpp
+Crypter.cpp contains the shellcode.h, which it will execute from memory through the runPE class
 
-Credits:
-runPE - unknown author, found on many sites. Slightly modified by me.
-Shellcode generator - Mark Russanovich. Slightly modified by me.
-I did not code either the runPE or the shellcode generator, I have only slightly modified parts of it to fit the needs of this project.
+#OriginalVirus.c
+Is just a simple Hello-World C-SourceFile, which is used instead of a virus to prevent harm to computers, if you want to test this on a real trojan, you can edit the batchfile to your needs, it should be pretty straightforward.
 
-Contents:
-Crypter.cpp - The source code for the crypter.
-runPE.h - The header that contains the method for executing an app in memory.
-ShellcodeGenerator.cpp - The source code for the shellcode generator. The shellcode generator will take bytes of an executable's image on HD, and store it in a header file called "shellcode.h".
-shellcode.h - The header file that stores the bytes of the executable you want to crypt. This will be the storage method of the crypter.
-MessageBox.cpp - A simple messagebox app that we will use to test the crypter. If you see the messagebox after you run the crypter, then the crypter works fine. 
-make.bat - If you are using the gcc comiler, there is this batch file in each folder that will comiler and link the source codes, for an easy way create executables.
-
-How to compile:
-1) Compile the MessageBox.cpp to create a MessageBox.exe, 
-this will be the file we will be crypting. 
-If you have another executable you want to test, that is fine too.
-
-2) Compile ShellcodeGenerator.cpp to create ShellcodeGenerator.exe
-
-3) Put MessageBox.exe (or whatever file you want to crypt) in ShellcodeGenerator.exe's folder.
-
-4) Run ShellcodeGenerator.exe with parameters from command line like this: 
-(ShellcodeGenerator.exe MessageBox.exe shellcode), after you run it you'll see shellcode.h created. 
-This contains the bytes of our exetable that we wanted to crypt.
-
-5) Put shellcode.h in crypter.cpp's directory.
-
-6) Compile crypter.cpp, now you'll have you're crypter output called crypted.exe!
-
-If you do everything correctly, after running crypted.exe you'll see the messagebox.
+#Batch file: 
+The batch file will compile, all the projects using the [MinGW-compiler](http://www.mingw.org/) for windows
