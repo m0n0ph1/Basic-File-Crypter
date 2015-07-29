@@ -43,5 +43,3 @@ DEL %CD%\zlib1.dll
 DEL %CD%\libintl-8.dll
 DEL %CD%\libiconv-2.dll
 DEL %CD%\ShellCode.h
-
-timeout 100
