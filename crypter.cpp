@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // CRYPTER.CPP - Process Hollowing Example (Does no actual Encoding/Encryption)
 //////////////////////////////////////////////////////////////////////////////////
-
+#include<iostream.h>
 #include <Windows.h>		// Include Windows API functions & macros
 #include "runPE.h"		// Header file with runPE Class and run Function (to run shellcode.h in memory)
 #include "shellcode.h"		// Contains the executable file to run in Memory as ShellCode (or ByteCode / Hexadecimal / 0x00)
