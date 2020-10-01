@@ -1,6 +1,6 @@
 #include <Windows.h>
 
-int main()
+int main() //we can use "void" also
 {	
 
 	char* title = "Virus....";
