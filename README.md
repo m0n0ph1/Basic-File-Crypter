@@ -22,4 +22,4 @@ The batch file will compile, all the projects using the [MinGW-compiler](http://
 #Note
 This repository contains no actual malicious code of any kind, however, the example file CryptedVirus.exe in the executables folder, has a Detection ratio of 24 / 55 on virustotal [as you can see here] (https://www.virustotal.com/en-gb/file/88d762cc978932e939bb5936956eb3cfb8826b2611705dbb02fa437b4e29193a/analysis/1438197026/)
 
-These are false-positives are the result of heuristic virus-scanners, they flag some of the used winapi's as 'malicous' because in the past malware like for instance Zeus/ZBot have also used these methods
+These false-positives are the result of heuristic virus-scanners, they flag some of the used winapi's as 'malicous' because in the past malware like for instance Zeus/ZBot have also used these methods
